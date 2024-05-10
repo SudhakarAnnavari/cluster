@@ -1,0 +1,110 @@
+{
+    "columns": [
+        {
+            "name": "id",
+            "type": "INTEGER"
+        },
+        {
+            "name": "booking_matchable",
+            "type": "UUID"
+        },
+        {
+            "name": "booking_unified_pid",
+            "type": "UUID"
+        },
+        {
+            "name": "booking_file_pid",
+            "type": "UUID"
+        },
+        {
+            "name": "status",
+            "type": "TEXT"
+        },
+        {
+            "name": "remark",
+            "type": "TEXT"
+        },
+        {
+            "name": "is_valid",
+            "type": "BOOLEAN"
+        },
+        {
+            "name": "data_json",
+            "type": "JSON"
+        },
+        {
+            "name": "ticket_number",
+            "type": "TEXT"
+        },
+        {
+            "name": "pnr",
+            "type": "TEXT"
+        },
+        {
+            "name": "transaction_date",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "vendor",
+            "type": "TEXT"
+        },
+        {
+            "name": "airline_name",
+            "type": "TEXT"
+        },
+        {
+            "name": "customer_gstin",
+            "type": "TEXT"
+        },
+        {
+            "name": "customer_name",
+            "type": "TEXT"
+        },
+        {
+            "name": "supplier_gstin",
+            "type": "TEXT"
+        },
+        {
+            "name": "supplier_name",
+            "type": "TEXT"
+        },
+        {
+            "name": "origin",
+            "type": "TEXT"
+        },
+        {
+            "name": "booking_k3",
+            "type": "NUMERIC"
+        },
+        {
+            "name": "financial_year",
+            "type": "TEXT"
+        },
+        {
+            "name": "traveller_name",
+            "type": "TEXT"
+        },
+        {
+            "name": "workspace",
+            "type": "TEXT"
+        },
+        {
+            "name": "created_at",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "modified_at",
+            "type": "TIMESTAMP"
+        },
+        {
+            "name": "index",
+            "type": "INTEGER"
+        },
+        {
+            "name": "error",
+            "type": "ARRAY"
+        }
+    ],
+    "row_count": 2129,
+    "table_name": "booking_matchable"
+}
