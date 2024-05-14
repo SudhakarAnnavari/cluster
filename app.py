@@ -28,6 +28,7 @@ with app.app_context():
 
 # Use the generated model
 MyTable = Base.classes.clusters
+UserTable = Base.classes.users
 
 
 
@@ -130,6 +131,35 @@ def delete_cluster(id):
             return jsonify({'error': str(e)}), 500
     else:
         return jsonify({'error': 'Cluster not found'}), 404
+    
+
+
+@app.route('/api/users', methods=['GET'])
+@cross_origin()  # Enable CORS on this route
+def fetch_users():
+    items = UserTable.query.all()  # Fetch all rows from the 'users' table
+    result = []
+    for item in items:
+        row_data = {col: getattr(item, col) for col in item.__table__.columns.keys()}
+        result.append(row_data)
+    return jsonify(result)  # Returns data as JSON
+
+
+@app.route('/api/users/<user_id>', methods=['PUT'])
+def update_user(user_id):
+    # Fetch the user by ID
+    user = UserTable.query.get(user_id)
+    if not user:
+        return jsonify({'error': 'User not found'}), 404
+
+    # Update the cluster_id from the request JSON
+    new_cluster_id = request.json.get('cluster_id')
+    if new_cluster_id:
+        user.cluster_id = new_cluster_id
+        db.session.commit()
+        return jsonify({'message': 'User updated successfully'}), 200
+    else:
+        return jsonify({'error': 'No cluster ID provided'}), 400    
 
 
 
