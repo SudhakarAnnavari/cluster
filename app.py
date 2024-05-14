@@ -135,4 +135,4 @@ def delete_cluster(id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')  # The app will be accessible at localhost:5000
+    app.run(port=4000)  
